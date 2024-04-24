@@ -1,4 +1,4 @@
-package com.example.androidnote;
+package com.example.androidnote.Sqlite;
 
 public class NoteModel {
     public int id;

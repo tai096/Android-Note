@@ -1,4 +1,4 @@
-package com.example.androidnote;
+package com.example.androidnote.Sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -104,4 +104,20 @@ public class DatabaseManager {
 
         return note;
     }
+
+    public void deleteNoteByDate(Context context, String date) {
+        // Define the where clause to specify the date
+        String selection = DBHelper.COLUMN_DATE + " = ?";
+        String[] selectionArgs = { date };
+
+        // Perform the delete operation
+        database.delete(
+                DBHelper.TABLE_NAME,
+                selection,
+                selectionArgs
+        );
+        Toast.makeText(context, "Đã xoa ghi chú", Toast.LENGTH_LONG).show();
+
+    }
+
 }
